@@ -40,6 +40,7 @@ fn test_difference_5() {
     assert_eq!(170, squares::difference(5));
 }
 
-#[test]fn test_difference_100() {
+#[test]
+fn test_difference_100() {
     assert_eq!(25_164_150, squares::difference(100));
 }
