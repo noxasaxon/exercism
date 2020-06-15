@@ -3,12 +3,13 @@ pub fn nth(n: u32) -> u32 {
     let mut cur_prime = 2;
 
     fn is_prime(x: u32) -> bool {
-        for i in 2..x {
-            if x % i == 0 {
-                return false;
-            }
-        }
-        true
+        !(2..x).any(|i| x % i == 0)
+        // for i in 2..x {
+        //     if x % i == 0 {
+        //         return false;
+        //     }
+        // }
+        // true
     }
 
     let mut index = 2;
@@ -20,5 +21,6 @@ pub fn nth(n: u32) -> u32 {
         }
     }
 
-    cur_prime
+    (1..n).filter(|&x| is_prime(x))
+    // cur_prime
 }
